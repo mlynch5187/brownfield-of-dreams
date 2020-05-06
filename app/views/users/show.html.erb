@@ -10,7 +10,7 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
-  <section>
+  <section class="github">
     <% if current_user.token != nil %>
     <h1>Github</h1>
     <% @repos.first(5).each do |repo| %>
@@ -18,6 +18,12 @@
     <p class="name"><%= link_to repo[:name], "http://github.com/#{repo[:full_name]}" %></p>
     </div>
     <% end %>
-    <% end %>
+    <h2>Followers</h2>
+      <% @followers.each do |follower| %>
+      <div class="follower">
+        <p class="follower_name"><%= link_to follower[:login], follower[:html_url] %></p>
+      </div>
+      <% end %>
+      <% end %>
   </section>
 </section>
