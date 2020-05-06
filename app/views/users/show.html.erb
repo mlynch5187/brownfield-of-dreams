@@ -13,6 +13,11 @@
   <section>
     <% if current_user.token != nil %>
     <h1>Github</h1>
+    <% @repos.first(5).each do |repo| %>
+     <div class="repo">
+    <p class="name"><%= link_to repo[:name], "http://github.com/#{repo[:full_name]}" %></p>
+    </div>
+    <% end %>
     <% end %>
   </section>
 </section>
