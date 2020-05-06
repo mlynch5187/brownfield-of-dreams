@@ -63,8 +63,6 @@ describe 'User' do
 
     click_on 'Log In'
 
-    save_and_open_page
-
     expect(page).to have_css(".repo", count: 5)
 
     within(first(".repo")) do

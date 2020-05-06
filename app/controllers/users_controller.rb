@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
     response = conn.get("/user/repos")
     @repos = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
   end
 
   def new
