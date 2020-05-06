@@ -15,7 +15,7 @@ RSpec.describe "As an admin on the new tutorial page" do
     visit "/admin/tutorials/new"
   end
 
-    it "Allows me to Import YouTube Playlist" do
+    it "Allows me to Import YouTube Playlist, can view it from flash link" do
 
       expect(page).to have_link("Import YouTube Playlist")
 
@@ -24,16 +24,24 @@ RSpec.describe "As an admin on the new tutorial page" do
       expect(current_path).to eq("/admin/tutorial/new/playlist")
 
       fill_in 'playlist_id', with: "PLv5J8Y-w11Srt2bPllM1orz_qRu7UDRWI"
+      fill_in 'title', with: "My Tutorial"
+      fill_in 'description', with: "Tutorial for cool kids"
+      fill_in 'thumbnail', with: "https://i.kym-cdn.com/photos/images/newsfeed/000/877/049/1ee.png"
 
       click_button "Submit"
+
+      tutorial = Tutorial.last
 
       expect(current_path).to eq("/admin/dashboard")
 
       expect(page).to have_content("Successfully created tutorial! View it here")
+
+      click_link "View it here"
+
+      expect(current_path).to eq("/tutorials/#{tutorial.id}")
+
+      expect(page).to have_css(".videos", count: 21)
+
+      # And the order should be the same as it was on YouTube
     end
   end
-# And 'View it here' should be a link to '/tutorials/:id'
-# And when I click on 'View it here'
-# Then I should be on '/tutorials/:id'
-# And I should see all videos from the YouTube playlist
-# And the order should be the same as it was on YouTube
