@@ -7,8 +7,8 @@ describe 'User' do
                       last_name: "Biden",
                       password: "password",
                       role: "default",
-                      token: "25734313ee735ae09e7b911c59fcf10ae1d4816c")
+                      token: ENV["GITHUB_TOKEN"])
 
-    expect user.token == "25734313ee735ae09e7b911c59fcf10ae1d4816c"
+    expect user.token == ENV["GITHUB_TOKEN"]
   end
-end               
+end
