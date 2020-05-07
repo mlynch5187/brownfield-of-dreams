@@ -43,5 +43,5 @@ RSpec.describe "As an admin on the new tutorial page" do
       # expect(page).to have_css(".videos", count: 21)
 
       # And the order should be the same as it was on YouTube
-    end
+    # end
   end
