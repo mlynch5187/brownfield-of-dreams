@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
   def show
-    conn = Faraday.new(url: 'https://api.github.com') do |faraday|
+    conn = Faraday.new('https://api.github.com') do |faraday|
       faraday.headers['Content-Type'] = 'application/json'
       faraday.headers['Authorization'] = "token #{current_user.token}"
     end
     response = conn.get('/user/repos')
-    @repos = JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true)
+    @repos = json.map do |github_repos|
+      Repo.new(github_repos)
+    end
 
     follower_list = conn.get('/user/followers')
-    @followers = JSON.parse(follower_list.body, symbolize_names: true)
-
     following_list = conn.get('user/following')
-    @following = JSON.parse(following_list.body, symbolize_names: true)
+    @follows = json.map do |github_repos|
+      Follow.new(github_repos)
+    end
   end
 
   def new
