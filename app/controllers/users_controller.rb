@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    if current_user.token != nil
+    return unless current_user.token != nil
       search_results = SearchResult.new
       @repos = search_results.repos(current_user.token)
       @followers = search_results.followers(current_user.token)
