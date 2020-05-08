@@ -1,5 +1,4 @@
 class SearchResult
-
   def repos(token)
     conn = Faraday.new('https://api.github.com') do |faraday|
       faraday.headers['Content-Type'] = 'application/json'

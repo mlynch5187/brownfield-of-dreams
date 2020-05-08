@@ -1,5 +1,4 @@
 class Repo
-
   attr_reader :name, :full_name
 
   def initialize(attributes)
