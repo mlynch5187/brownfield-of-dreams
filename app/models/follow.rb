@@ -1,5 +1,4 @@
 class Follow
-  
   attr_reader :login, :html_url
 
   def initialize(attributes)
