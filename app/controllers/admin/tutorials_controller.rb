@@ -7,11 +7,11 @@ class Admin::TutorialsController < Admin::BaseController
     tutorial = Tutorial.create(tutorial_params)
 
     if tutorial.save
-      conn = Faraday.new(url: 'https://www.googleapis.com/youtube/v3') do |faraday|
-        faraday.headers['Authorization'] = "AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o"
-        faraday.headers['Accept'] = "application/json"
+      conn = Faraday.new(url: 'https://www.googleapis.com') do |faraday|
+        faraday.adapter Faraday.default_adapter
+        faraday.params[:key] = 'AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o'
       end
-      response = conn.get("/playlistItems?part=snippet&playlistId=PLxhnpe8pN3TkenzFLTlz2hUd6_BZu-5Zv&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o")
+      response = conn.get('/youtube/v3/playlistItems?part=snippet&playlistId=PLxhnpe8pN3TkenzFLTlz2hUd6_BZu-5Zv&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o')
       require "pry"; binding.pry
       redirect_to "/admin/dashboard"
 
