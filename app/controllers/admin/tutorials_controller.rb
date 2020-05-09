@@ -4,7 +4,24 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-    redirect_to "/admin/dashboard"
+    tutorial = Tutorial.create(tutorial_params)
+
+    if tutorial.save
+      conn = Faraday.new(url: 'https://www.googleapis.com/youtube/v3') do |faraday|
+        faraday.headers['Authorization'] = "AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o"
+        faraday.headers['Accept'] = "application/json"
+      end
+      response = conn.get("/playlistItems?part=snippet&playlistId=PLxhnpe8pN3TkenzFLTlz2hUd6_BZu-5Zv&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o")
+      require "pry"; binding.pry
+      redirect_to "/admin/dashboard"
+
+    else
+      flash[:error] = 'Did not Work'
+      render :new
+    end
+
+
+
   end
 
   def new
@@ -28,6 +45,6 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
   def tutorial_params
-    params.require(:tutorial).permit(:tag_list)
+    params.require(:tutorial).permit(:youtube_id, :title, :description, :thumbnail)
   end
 end
