@@ -3,7 +3,9 @@ class Admin::TutorialsController < Admin::BaseController
     @tutorial = Tutorial.find(params[:id])
   end
 
-  def create; end
+  def create
+    redirect_to "/admin/dashboard"
+  end
 
   def new
     @tutorial = Tutorial.new
