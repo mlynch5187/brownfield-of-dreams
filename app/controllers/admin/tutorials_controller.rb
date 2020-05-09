@@ -9,10 +9,11 @@ class Admin::TutorialsController < Admin::BaseController
     if tutorial.save
       conn = Faraday.new(url: 'https://www.googleapis.com') do |faraday|
         faraday.adapter Faraday.default_adapter
-        faraday.params[:key] = 'AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o'
+        faraday.params[:key] = ENV['YOUTUBE_API_KEY']
       end
-      response = conn.get('/youtube/v3/playlistItems?part=snippet&playlistId=PLxhnpe8pN3TkenzFLTlz2hUd6_BZu-5Zv&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o')
-      require "pry"; binding.pry
+      response = conn.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{tutorial.youtube_id}&key=#{ENV['YOUTUBE_API_KEY']}")
+      json = JSON.parse(response.body, symbolize_names: true)
+      
       redirect_to "/admin/dashboard"
 
     else
