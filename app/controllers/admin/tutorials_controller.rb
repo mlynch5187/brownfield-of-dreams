@@ -11,27 +11,25 @@ class Admin::TutorialsController < Admin::BaseController
         faraday.adapter Faraday.default_adapter
         faraday.params[:key] = ENV['YOUTUBE_API_KEY']
       end
-      response = conn.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{tutorial.youtube_id}&key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
+      response = conn.get("/youtube/v3/playlistItems?part=snippet
+                          &playlistId=#{tutorial.youtube_id}
+                          &key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
       @videos = JSON.parse(response.body, symbolize_names: true)
-      mapped_videos = @videos[:items].map do |video|
-        video = tutorial.videos.create!(title: video[:snippet][:title],
-                                        description: video[:snippet][:description],
-                                        thumbnail: video[:snippet][:thumbnails][:high][:url],
-                                        video_id: video[:snippet][:resourceId][:videoId]
-                                        )
-        end
+      @videos[:items].map do |video|
+        tutorial.videos.create!(title: video[:snippet][:title],
+                                description: video[:snippet][:description],
+                                thumbnail: video[:snippet][:thumbnails][:high][:url],
+                                video_id: video[:snippet][:resourceId][:videoId])
+      end
 
-      flash[:success] = %Q[Successfully created tutorial! <a href="/tutorials/#{tutorial.id}">View it here</a>]
+      flash[:success] = %[Successfully created tutorial! <a href="/tutorials/#{tutorial.id}">View it here</a>]
       flash[:html_safe] = true
-      redirect_to "/admin/dashboard"
+      redirect_to '/admin/dashboard'
 
     else
-      flash[:error] = "Tutorial was unable to be created"
+      flash[:error] = 'Tutorial was unable to be created'
       render :new
     end
-
-
-
   end
 
   def new

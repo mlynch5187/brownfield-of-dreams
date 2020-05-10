@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :error
   before_action -> { flash.now[:success] = flash[:success].html_safe if flash[:html_safe] && flash[:success] }
 
-
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
