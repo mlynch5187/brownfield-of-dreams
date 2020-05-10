@@ -22,9 +22,9 @@ RSpec.describe "As an admin on the new tutorial page" do
       click_link("Import YouTube Playlist")
 
       expect(current_path).to eq("/admin/playlists/new")
-  
+
       fill_in "Title", with: "My Tutorial"
-      fill_in "Youtube", with: "PLv5J8Y-w11Srt2bPllM1orz_qRu7UDRWI"
+      fill_in "Youtube", with: "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz"
       fill_in "Description", with: "Tutorial for cool kids"
       fill_in "Thumbnail", with: "https://i.kym-cdn.com/photos/images/newsfeed/000/877/049/1ee.png"
 
@@ -40,8 +40,10 @@ RSpec.describe "As an admin on the new tutorial page" do
 
       expect(current_path).to eq("/tutorials/#{tutorial.id}")
 
-      expect(page).to have_css(".videos", count: 21)
+      expect(page).to have_css(".video", count: 9)
 
-    #  And the order should be the same as it was on YouTube
+      expect("The Chesapeake Boys").to appear_before("Nebraska")
+
+      expect("Hopeful").to_not appear_before("Charlie")
     end
   end

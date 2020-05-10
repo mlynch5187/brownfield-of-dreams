@@ -42,6 +42,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'chromedriver-helper'
+  gem 'orderly'
 end
 
 group :development do

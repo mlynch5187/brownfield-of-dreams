@@ -5,9 +5,11 @@
   <h4>Videos</h4>
   <ul>
     <% @facade.videos.each do |video| %>
+      <div class="video">
       <li>
         <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link", id: video.position %></h3>
       </li>
+      </div>
     <% end %>
   </ul>
 </div>

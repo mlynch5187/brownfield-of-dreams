@@ -11,7 +11,7 @@ class Admin::TutorialsController < Admin::BaseController
         faraday.adapter Faraday.default_adapter
         faraday.params[:key] = ENV['YOUTUBE_API_KEY']
       end
-      response = conn.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{tutorial.youtube_id}&key=#{ENV['YOUTUBE_API_KEY']}")
+      response = conn.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{tutorial.youtube_id}&key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
       @videos = JSON.parse(response.body, symbolize_names: true)
       mapped_videos = @videos[:items].map do |video|
         video = tutorial.videos.create!(title: video[:snippet][:title],
