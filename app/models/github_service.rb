@@ -20,4 +20,5 @@ class GithubService
     following_list = conn(token).get('user/following')
     JSON.parse(following_list.body, symbolize_names: true)
   end
+
 end
