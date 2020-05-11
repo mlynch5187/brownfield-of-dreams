@@ -15,6 +15,44 @@ RSpec.describe "As an admin on the new tutorial page" do
     visit "/admin/tutorials/new"
   end
 
+  it "Shows a form where I can create a new tutorial" do
+
+    fill_in "Title", with: "My Tutorial"
+    fill_in "Description", with: "Tutorial for cool kids"
+    fill_in "Thumbnail", with: "https://i.kym-cdn.com/photos/images/newsfeed/000/877/049/1ee.png"
+
+    click_button "Save"
+
+    tutorial = Tutorial.last
+
+    expect(current_path).to eq("/tutorials/#{tutorial.id}")
+
+    expect(page).to have_content("Successfully created tutorial!")
+
+    expect(page).to have_content("My Tutorial")
+  end
+
+  # it "Tutorial isn't created when fields are missing" do
+  #
+  #   fill_in "Title", with: ""
+  #   fill_in "Description", with: "Tutorial for cool kids"
+  #   fill_in "Thumbnail", with: "https://i.kym-cdn.com/photos/images/newsfeed/000/877/049/1ee.png"
+  #
+  #   click_button "Save"
+  #
+  #   expect(page).to have_content("Tutorial was unable to be created!")
+  #
+  #   expect(current_path).to eq("/tutorials/#{tutorial.id}")
+  #
+  #   fill_in "Title", with: "My Tutorial"
+  #   fill_in "Description", with: "My Tutorial"
+  #   fill_in "Thumbnail", with: "https://i.kym-cdn.com/photos/images/newsfeed/000/877/049/1ee.png"
+  #
+  #   click_button "Save"
+  #
+  #   expect(page).to have_content("Tutorial was unable to be created!")
+  # end
+
   it "Allows me to Import YouTube Playlist, can view it from flash link" do
 
       expect(page).to have_link("Import YouTube Playlist")

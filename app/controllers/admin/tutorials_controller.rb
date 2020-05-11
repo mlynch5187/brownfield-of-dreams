@@ -6,7 +6,7 @@ class Admin::TutorialsController < Admin::BaseController
   def create
     tutorial = Tutorial.create(tutorial_params)
 
-    if tutorial.save
+    if tutorial.save && tutorial.youtube_id != nil
       conn = Faraday.new(url: 'https://www.googleapis.com') do |faraday|
         faraday.adapter Faraday.default_adapter
         faraday.params[:key] = ENV['YOUTUBE_API_KEY']
@@ -25,7 +25,9 @@ class Admin::TutorialsController < Admin::BaseController
       flash[:success] = %[Successfully created tutorial! <a href="/tutorials/#{tutorial.id}">View it here</a>]
       flash[:html_safe] = true
       redirect_to '/admin/dashboard'
-
+    elsif tutorial.save
+      flash[:success] = 'Successfully created tutorial!'
+      redirect_to "/tutorials/#{tutorial.id}"
     else
       flash[:error] = 'Tutorial was unable to be created'
       render :new

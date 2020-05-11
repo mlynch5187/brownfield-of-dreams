@@ -4,6 +4,7 @@
 <div class="col col-4">
   <h4>Videos</h4>
   <ul>
+    <% if @facade.videos.count != 0 %>
     <% @facade.videos.each do |video| %>
       <div class="video">
       <li>
@@ -66,6 +67,7 @@
     <%= @facade.current_video.description.truncate(50) %>...
     <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @facade.current_video.id, class: "show-link"%>
   </p>
+  <% end %>
 </div>
 
 </main>
