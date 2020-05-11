@@ -53,6 +53,7 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
   def tutorial_params
-    params.require(:tutorial).permit(:youtube_id, :title, :description, :thumbnail)
+    params.require(:tutorial)
+          .permit(:youtube_id, :title, :description, :thumbnail)
   end
 end
