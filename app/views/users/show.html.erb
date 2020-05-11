@@ -30,6 +30,8 @@
           <p class="following_name"><%= link_to person_following.login, person_following.html_url %></p>
         </div>
       <% end %>
+      <% else %>
+      <%= button_to 'Connect to Github', "auth/github", class: "btn btn-primary mb1 bg-teal" %>
       <% end %>
     </section>
 </section>
