@@ -15,17 +15,27 @@ class SessionsController < ApplicationController
   end
 
   def update
-    if current_user.update(token: request.env['omniauth.auth']['credentials']['token'])
+    token = request.env['omniauth.auth']['credentials']['token']
+    #current_user.link_github(token)
+
+    current_user.update(token: token)
+    if current_user.save
       flash[:success] = "Successfully linked to Github"
       redirect_to '/dashboard'
     else
       flash[:error] = "Looks like you couldn't connect to Github"
-      render :new
+      redirect_to '/dashboard'
     end
   end
 
   def destroy
     session[:user_id] = nil
     redirect_to root_path
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :password, :token)
   end
 end

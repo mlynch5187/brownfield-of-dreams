@@ -10,9 +10,11 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
-  <%= button_to 'Connect to Github', "auth/github", class: "btn btn-primary mb1 bg-teal" %>
+
   <section class="github">
-    <% if current_user.token != nil %>
+    <% if current_user.token == nil %>
+    <%= button_to 'Connect to Github', "auth/github", class: "btn btn-primary mb1 bg-teal" %>
+    <% else %>
     <h1>Github</h1>
     <% @repos.first(5).each do |repo| %>
      <div class="repo">
