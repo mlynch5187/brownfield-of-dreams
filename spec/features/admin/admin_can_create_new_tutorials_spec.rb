@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "As an admin on the new tutorial page" do
+feature "As an admin on the new tutorial page" do
   before(:each) do
 
     @admin = User.create(email: "joe@example.com",
@@ -15,7 +15,16 @@ RSpec.describe "As an admin on the new tutorial page" do
   visit "/admin/tutorials/new"
   end
 
-  it "Shows a form where I can create a new tutorial" do
+  scenario "Shows a form where I can create a new tutorial" do
+    playlist_results = File.read('spec/fixtures/playlist_results.json')
+    stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyA0o4ESaWfpiIrYW2QNwV2T_AaKU-aZpbw&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v1.0.1'
+           }).
+         to_return(status: 200, body: playlist_results, headers: {})
 
     fill_in "Title", with: "My Tutorial"
     fill_in "Description", with: "Tutorial for cool kids"
@@ -53,17 +62,16 @@ RSpec.describe "As an admin on the new tutorial page" do
   #
   #   expect(page).to have_content("Tutorial was unable to be created!")
   # end
-  feature "admin can create tutorial from YouTube playlist" do
     scenario "user submits form with valid YouTube playlist id" do
-      mock_response = File.read('spec/fixtures/playlist_results.json')
-      stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
+      playlist_results = File.read('spec/fixtures/playlist_results.json')
+      stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyA0o4ESaWfpiIrYW2QNwV2T_AaKU-aZpbw&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
          with(
            headers: {
        	  'Accept'=>'*/*',
        	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
        	  'User-Agent'=>'Faraday v1.0.1'
            }).
-         to_return(status: 200, body: mock_response, headers: {})
+         to_return(status: 200, body: playlist_results, headers: {})
 
       expect(page).to have_link("Import YouTube Playlist")
 
@@ -93,6 +101,5 @@ RSpec.describe "As an admin on the new tutorial page" do
       expect("The Chesapeake Boys").to appear_before("Nebraska")
 
       expect("Hopeful").to_not appear_before("Charlie")
-      end
     end
   end
