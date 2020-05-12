@@ -22,7 +22,7 @@ class Admin::TutorialsController < Admin::BaseController
                                 video_id: video[:snippet][:resourceId][:videoId])
       end
 
-      flash[:success] = %[Successfully created tutorial! <a href="/tutorials/#{tutorial.id}">View it here</a>]
+      flash[:success] = %(Successfully created tutorial! <a href="/tutorials/#{tutorial.id}">View it here</a>)
       flash[:html_safe] = true
       redirect_to '/admin/dashboard'
     elsif tutorial.save
