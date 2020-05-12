@@ -16,6 +16,8 @@ feature "As an admin on the new tutorial page" do
   end
 
   scenario "Shows a form where I can create a new tutorial" do
+    WebMock.disable!
+
     playlist_results = File.read('spec/fixtures/playlist_results.json')
     stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyA0o4ESaWfpiIrYW2QNwV2T_AaKU-aZpbw&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
          with(
@@ -62,7 +64,9 @@ feature "As an admin on the new tutorial page" do
   #
   #   expect(page).to have_content("Tutorial was unable to be created!")
   # end
+
     scenario "user submits form with valid YouTube playlist id" do
+      WebMock.disable!
       playlist_results = File.read('spec/fixtures/playlist_results.json')
       stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyA0o4ESaWfpiIrYW2QNwV2T_AaKU-aZpbw&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
          with(
