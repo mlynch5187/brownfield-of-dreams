@@ -1,0 +1,390 @@
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/Qu_xbw-XPLVQmADG0ufW_TD4z1M\"",
+    "pageInfo": {
+        "totalResults": 9,
+        "resultsPerPage": 50
+    },
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/3upxwjK903KCMOpysBH_vWMqbtY\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei5GNjNDRDREMDQxOThCMDQ2",
+            "snippet": {
+                "publishedAt": "2017-01-31T03:34:58.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk / Easycore Instrumental - The Chesapeake Boys",
+                "description": "Check out my soundcloud for more music:\n\nhttps://soundcloud.com/user-22906380",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/I3x1KoU6eHg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/I3x1KoU6eHg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/I3x1KoU6eHg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/I3x1KoU6eHg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 0,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "I3x1KoU6eHg"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/of2grl4IY8PHFqB0Kat0Naiqs-U\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei45NDk1REZENzhEMzU5MDQz",
+            "snippet": {
+                "publishedAt": "2016-05-11T15:38:33.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Easycore / Pop Punk Instrumental - \"Nebraska\"",
+                "description": "Easycore / Pop Punk Instrumental\n\nhttps://soundcloud.com/user-22906380/sets/for-fun\n\nLooking to start or join a band in the Denver area!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/sYB6XwfR9To/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/sYB6XwfR9To/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/sYB6XwfR9To/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/sYB6XwfR9To/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 1,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "sYB6XwfR9To"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/XSEDlKaFyCwO68BNLmj5Ispa3uU\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei41NkI0NEY2RDEwNTU3Q0M2",
+            "snippet": {
+                "publishedAt": "2016-02-10T01:46:48.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk Easycore Instrumental - Cockblock Kupchock",
+                "description": "Song: Cockblock Kupchock\n\nArtist: Alex Lynch\n\nhttps://soundcloud.com/user-22906380/sets/for-fun",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/oG6o-BIdKXk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/oG6o-BIdKXk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/oG6o-BIdKXk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/oG6o-BIdKXk/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/oG6o-BIdKXk/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 2,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "oG6o-BIdKXk"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/dNnKMHGK4AWwbdsj4b1xE6KQ7Uk\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei4wMTcyMDhGQUE4NTIzM0Y5",
+            "snippet": {
+                "publishedAt": "2016-02-10T01:46:48.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk Easycore Instrumental - Higher Than The Rockies",
+                "description": "Song: Higher Than The Rockies\n\nArtist: Alex Lynch\n\nhttps://soundcloud.com/user-22906380/sets/for-fun",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/8guAKSPxdSQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/8guAKSPxdSQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/8guAKSPxdSQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/8guAKSPxdSQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/8guAKSPxdSQ/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 3,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "8guAKSPxdSQ"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/Ts7ahhX7IurrPRRXj_35jC6o90Q\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei41MjE1MkI0OTQ2QzJGNzNG",
+            "snippet": {
+                "publishedAt": "2016-02-10T01:46:48.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk Easycore Instrumental - Trials & Tribulations Of A Millionaire Housewife",
+                "description": "Song: Trials & Tribulations Of A Millionaire Housewife\n\nArtist: Alex Lynch\n\nhttps://soundcloud.com/user-22906380/sets/for-fun",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ayUluOFBYKM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ayUluOFBYKM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ayUluOFBYKM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/ayUluOFBYKM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/ayUluOFBYKM/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 4,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ayUluOFBYKM"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/1yJYJOc_4RNwIrEXPbMReHNnePE\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei4wOTA3OTZBNzVEMTUzOTMy",
+            "snippet": {
+                "publishedAt": "2016-02-10T01:46:48.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk Easycore Instrumental - Charlie Brown's Got Nothin' On Me (2015)",
+                "description": "Song: Charlie Brown's Got Nothin' On Me\n\nAlbum: The Old Stuff\n\nArtist: Alex Lynch\n\nhttps://soundcloud.com/user-22906380/sets/for-fun",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/M7-1AIhtslo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/M7-1AIhtslo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/M7-1AIhtslo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/M7-1AIhtslo/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/M7-1AIhtslo/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 5,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "M7-1AIhtslo"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/CR2jz86z1W52wECSA-fvNhoTRmc\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei5DQUNERDQ2NkIzRUQxNTY1",
+            "snippet": {
+                "publishedAt": "2016-05-11T15:27:38.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk / Easycore instrumental - Nebraska (MIDI)",
+                "description": "Pop punk easycore instrumental!\n\nhttps://soundcloud.com/user-22906380/sets/for-fun",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Y_NLRXIme1k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Y_NLRXIme1k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Y_NLRXIme1k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Y_NLRXIme1k/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 6,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Y_NLRXIme1k"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/UI65i5mqoD2zleZd6UUwN07uEOI\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei5EMEEwRUY5M0RDRTU3NDJC",
+            "snippet": {
+                "publishedAt": "2017-07-09T15:26:28.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Pop Punk / Easycore Instrumental - Charlie Brown's Got Nothin' On Me (2017)",
+                "description": "https://soundcloud.com/user-22906380",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/1Xc36TumtjM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/1Xc36TumtjM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/1Xc36TumtjM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/1Xc36TumtjM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 7,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "1Xc36TumtjM"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/G-MKmALfVrThNHE0S5c13yMNDts\"",
+            "id": "UExzUExQY3pYMEptdTFFRVhENXdzaEVxUER6akhUdldaei45ODRDNTg0QjA4NkFBNkQy",
+            "snippet": {
+                "publishedAt": "2017-07-09T15:29:34.000Z",
+                "channelId": "UCqlnTKE0C9ESejlZ7i9QRhA",
+                "title": "Easycore / Pop Punk Instrumental - Hopeful",
+                "description": "https://soundcloud.com/user-22906380",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/S8JGOKmg1N0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/S8JGOKmg1N0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/S8JGOKmg1N0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/S8JGOKmg1N0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "Michael Alex Lynch",
+                "playlistId": "PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz",
+                "position": 8,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "S8JGOKmg1N0"
+                }
+            }
+        }
+    ]
+}
