@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = 'Logged in as Jim Bob'
+      flash[:notice] = 'This account has not yet been activated. Please check your email'
       redirect_to dashboard_path
     else
       flash[:error] = 'Username already exists'
