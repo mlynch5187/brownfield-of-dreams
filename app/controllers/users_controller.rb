@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       user_email = user.email
       email_info = { user: user.first_name, user_email: user.email, user_id: user.id }
       RegistrationMailer.inform(email_info, user_email).deliver_now
-      flash[:success] = 'Logged in as Jim Bob'
+      flash[:success] = "Logged in as #{user.first_name} #{user.last_name}"
       flash[:notice] = 'This account has not yet been activated. Please check your email'
       redirect_to dashboard_path
     else
