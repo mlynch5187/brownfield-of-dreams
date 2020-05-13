@@ -35,8 +35,8 @@ class UsersController < ApplicationController
   def setup_email
     @user_email = @user_1.email
     @email_info = { user: @user_1.first_name,
-                   user_email: @user_1.email,
-                   user_id: @user_1.id }
+                    user_email: @user_1.email,
+                    user_id: @user_1.id }
   end
 
   def flash_success_create
