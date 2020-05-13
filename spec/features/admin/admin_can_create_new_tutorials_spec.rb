@@ -16,9 +16,7 @@ feature "As an admin on the new tutorial page" do
   end
 
   scenario "Shows a form where I can create a new tutorial" do
-    playlist_results = File.read('spec/fixtures/playlist_results.json')
-    stub_request(:get, 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o&maxResults=50').
-         to_return(status: 200, body: playlist_results, headers: {})
+    VCR.use_cassette('Create New Tutorial') do
 
     fill_in "Title", with: "My Tutorial"
     fill_in "Description", with: "Tutorial for cool kids"
@@ -33,7 +31,7 @@ feature "As an admin on the new tutorial page" do
     expect(page).to have_content("Successfully created tutorial!")
 
     expect(page).to have_content("My Tutorial")
-
+    end
   end
 
   # it "Tutorial isn't created when fields are missing" do
@@ -62,16 +60,7 @@ feature "As an admin on the new tutorial page" do
 
       click_link("Import YouTube Playlist")
 
-      playlist_results = File.read('spec/fixtures/playlist_results.json')
-      stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
-              with(
-                headers: {
-            	  'Accept'=>'*/*',
-            	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            	  'User-Agent'=>'Faraday v1.0.1'
-                }).
-              to_return(status: 200, body: playlist_results, headers: {})
-
+      VCR.use_cassette('Import YouTube Playlist') do
 
       expect(current_path).to eq("/admin/playlists/new")
 
@@ -97,5 +86,6 @@ feature "As an admin on the new tutorial page" do
       expect("The Chesapeake Boys").to appear_before("Nebraska")
 
       expect("Hopeful").to_not appear_before("Charlie")
+      end
     end
   end
