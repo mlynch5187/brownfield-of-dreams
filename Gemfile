@@ -44,6 +44,7 @@ group :development, :test do
   gem 'webdrivers'
   gem 'chromedriver-helper'
   gem 'orderly'
+  gem 'webmock'
 end
 
 group :development do

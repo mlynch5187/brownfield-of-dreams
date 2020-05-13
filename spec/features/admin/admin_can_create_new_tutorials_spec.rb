@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "As an admin on the new tutorial page" do
+feature "As an admin on the new tutorial page" do
   before(:each) do
 
     @admin = User.create(email: "joe@example.com",
@@ -12,10 +12,13 @@ RSpec.describe "As an admin on the new tutorial page" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
 
-    visit "/admin/tutorials/new"
+  visit "/admin/tutorials/new"
   end
 
-  it "Shows a form where I can create a new tutorial" do
+  scenario "Shows a form where I can create a new tutorial" do
+    playlist_results = File.read('spec/fixtures/playlist_results.json')
+    stub_request(:get, 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz&key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o&maxResults=50').
+         to_return(status: 200, body: playlist_results, headers: {})
 
     fill_in "Title", with: "My Tutorial"
     fill_in "Description", with: "Tutorial for cool kids"
@@ -30,6 +33,7 @@ RSpec.describe "As an admin on the new tutorial page" do
     expect(page).to have_content("Successfully created tutorial!")
 
     expect(page).to have_content("My Tutorial")
+
   end
 
   # it "Tutorial isn't created when fields are missing" do
@@ -53,11 +57,21 @@ RSpec.describe "As an admin on the new tutorial page" do
   #   expect(page).to have_content("Tutorial was unable to be created!")
   # end
 
-  it "Allows me to Import YouTube Playlist, can view it from flash link" do
-
+    scenario "user submits form with valid YouTube playlist id" do
       expect(page).to have_link("Import YouTube Playlist")
 
       click_link("Import YouTube Playlist")
+
+      playlist_results = File.read('spec/fixtures/playlist_results.json')
+      stub_request(:get, "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBcqY7dl4wa7xVsAY2qta2u_Ffnz4M0u7o&maxResults=50&part=snippet%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&playlistId=PLsPLPczX0Jmu1EEXD5wshEqPDzjHTvWZz%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20").
+              with(
+                headers: {
+            	  'Accept'=>'*/*',
+            	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            	  'User-Agent'=>'Faraday v1.0.1'
+                }).
+              to_return(status: 200, body: playlist_results, headers: {})
+
 
       expect(current_path).to eq("/admin/playlists/new")
 
