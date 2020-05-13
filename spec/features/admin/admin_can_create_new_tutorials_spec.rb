@@ -60,7 +60,7 @@ feature "As an admin on the new tutorial page" do
 
       click_link("Import YouTube Playlist")
 
-      VCR.use_cassette('Import YouTube Playlist') do
+      VCR.use_cassette('Import YouTube Playlist 2') do
 
       expect(current_path).to eq("/admin/playlists/new")
 
