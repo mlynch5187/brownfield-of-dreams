@@ -4,8 +4,8 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-      tutorial = Tutorial.create!(tutorial_params)
-
+      tutorial = Tutorial.create(tutorial_params)
+      
       if tutorial.save && tutorial.youtube_id != nil
         conn = Faraday.new(url: 'https://www.googleapis.com') do |faraday|
           faraday.adapter Faraday.default_adapter
@@ -16,7 +16,7 @@ class Admin::TutorialsController < Admin::BaseController
                             &key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
         @videos = JSON.parse(response.body, symbolize_names: true)
         @videos[:items].map do |video|
-          tutorial.videos.create!(title: video[:snippet][:title],
+          tutorial.videos.create(title: video[:snippet][:title],
                                   description: video[:snippet][:description],
                                   thumbnail: video[:snippet][:thumbnails][:high][:url],
                                   video_id: video[:snippet][:resourceId][:videoId])
