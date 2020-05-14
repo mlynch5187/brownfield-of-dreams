@@ -5,7 +5,7 @@ class TutorialsController < ApplicationController
   end
 
   def index
-    if current_user != nil
+    if !current_user.nil?
       @show_tutorials = Tutorial.all
     else
       @show_tutorials = []
@@ -15,6 +15,6 @@ class TutorialsController < ApplicationController
           @show_tutorials << tutorial
         end
       end
-    end 
+    end
   end
 end
