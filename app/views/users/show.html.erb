@@ -27,9 +27,6 @@
       <% @followers.each do |follower| %>
       <div class="follower">
         <p class="follower_name"><%= link_to follower.login, follower.html_url %></p>
-        <% if follower.has_account? %>
-          <%= link_to "Add Friend", "/friends, method: :post" %>
-        <% end %>
       </div>
       <% end %>
       <h2>Following</h2>
