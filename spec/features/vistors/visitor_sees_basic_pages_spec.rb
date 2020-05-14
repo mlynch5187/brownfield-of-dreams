@@ -23,4 +23,12 @@ describe 'Visitor' do
       end
     end
   end
+
+  describe 'on the about page' do
+    it 'can see the about me information' do
+      visit '/about'
+
+      expect(page).to have_content('Turing Tutorials')
+    end
+  end
 end
