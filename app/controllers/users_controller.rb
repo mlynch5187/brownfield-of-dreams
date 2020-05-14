@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     @user_1 = User.create(user_params)
     if @user_1.save
       session[:user_id] = @user_1.id
-      setup_email
-      RegistrationMailer.inform(@email_info, @user_email).deliver_now
+      # setup_email
+      # RegistrationMailer.inform(@email_info, @user_email).deliver_now
       flash_success_create
       redirect_to dashboard_path
     else
