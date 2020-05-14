@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       flash_success_create
       redirect_to dashboard_path
     else
-      flash[:error] = 'Username already exists'
+      flash[:error] = 'Email already exists'
       render :new
     end
   end
