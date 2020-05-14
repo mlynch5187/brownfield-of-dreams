@@ -26,7 +26,6 @@ RSpec.describe RegistrationMailer, type: :mailer do
         expect(mail.from).to eql(['no-reply@advice.io'])
       end
 
-
       it 'assigns @confirmation_url' do
         expect(mail.body.encoded).to match("http://localhost3000/confirm/#{user.id}")
       end
