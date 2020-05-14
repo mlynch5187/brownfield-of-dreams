@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'vister can create an account', :js do
+describe 'vister can create an account and confirm it', :js do
   it ' visits the home page' do
     WebMock.disable!
 
@@ -37,5 +37,13 @@ describe 'vister can create an account', :js do
     expect(page).to have_content("This account has not yet been activated. Please check your email")
     expect(page).to_not have_content('Sign In')
     expect(page).to have_content('Inactive')
+
+    user = User.last
+
+    visit "/confirm/#{user.id}"
+
+    visit dashboard_path
+
+    expect(page).to have_content('Active')
   end
 end
