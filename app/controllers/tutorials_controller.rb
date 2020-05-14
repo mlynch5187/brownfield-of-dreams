@@ -5,6 +5,16 @@ class TutorialsController < ApplicationController
   end
 
   def index
-    @tutorials = Tutorial.all
+    if !current_user.nil?
+      @show_tutorials = Tutorial.all
+    else
+      @show_tutorials = []
+      tutorials = Tutorial.all
+      tutorials.each do |tutorial|
+        if tutorial.classroom == false
+          @show_tutorials << tutorial
+        end
+      end
+    end
   end
 end
